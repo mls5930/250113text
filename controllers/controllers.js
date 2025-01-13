@@ -1,16 +1,18 @@
 const commetrepository = require('../service/service')
 
-const getdatalist =async (req,res)=>{
+const getdatalist = async (req,res)=>{
     const boardList = await commetrepository.datalist()
-    res.render('list.html',
+    res.render('list.html',{
         boardList
-    )
+    })
 }
 
-const getdatwrite =async (req,res)=>{
-    const {insertId} = await commetrepository.datawrite()
-    res.render('list.html',
-    )
+const postdatwrite =async (req,res)=>{
+    console.log(req.body);
+    
+    const {insertId} = await commetrepository.datawrite(req.body)
+    
+    res.redirect('/list')
 }
 
 const postUpdate = async (req,res)=>{
@@ -22,13 +24,12 @@ const postUpdate = async (req,res)=>{
 const postslice = async (req,res)=>{
     const id = parseInt(req.params.id)
     await commetrepository.dataslice(id)
-    res.render('list.html')
+    res.redirect('/list')
 }
 
 module.exports={
     getdatalist,
-    getdatwrite,
+    postdatwrite,
     postUpdate,
     postslice
-
 }
