@@ -1,27 +1,15 @@
 const express = require("express");
 const router = express.Router()
-const comments = require("")
+const comments = require('../controllers/controllers')
 
 
-router.get('/list', comments.getList)
+router.get('/list',comments.getdatalist)
 
-router.get('/write/:id',(req,res)=>{
+router.post('/write',comments.postdatwrite)
 
-})
+router.post('/update/:id',comments.postUpdate)
 
-router.post('/write',db)
+router.post('/delete/:id',comments.postslice)
 
-router.get('/update',(req,res)=>{
-    const id = parseInt(req.params.id)
-    res.render(`write.html/${id}`)
-})
-router.get('/update',(req,res)=>{
-    const id = parseInt(req.params.id)
-    res.render(`write.html/${id}`)
-})
-router.post('/delete',(req,res)=>{
-    const id = parseInt(req.params.id)
-    res.redirect(`/list`)
-})
 
 module.exports = router
