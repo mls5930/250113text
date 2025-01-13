@@ -192,3 +192,5 @@ const getdatalist = async (req,res)=>{
 총 점수 44점
 
 재시험
+
+피드백 다시 드립니다
