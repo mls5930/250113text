@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댓글 목록 구현</title>
+    <link href="/css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <ul id="comment">
+        <li>
+          <form id="commentFrm" method="post" action="/comment/write">
+            <h4>
+              댓글쓰기
+              <span></span>
+            </h4>
+            <span class="comment-write">
+              <input
+                type="text"
+                placeholder="댓글 내용을 입력해주세요."
+                name="content"
+              />
+            </span>
+            <input type="submit" class="write-button" value="등록" />
+          </form>
+        </li>
+        <li>
+          {% for item in commentList %}
+          <div class="comment-row-list">
+            <div>{{ item.userid }}</div>
+            <div class="comment-content">
+              <div>
+                <a href="/comment/update/{{ item.id }}">{{ item.content }}</a>
+              </div>
+              <form method="post" action="/comment/delete/{{ item.id }}">
+                <button type="submit">삭제</button>
+              </form>
+            </div>
+            <div>{{ item.created_at }}</div>
+          </div>
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
+

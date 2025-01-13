@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댓글 수정 페이지</title>
+    <link href="/css/index.css" rel="stylesheet" />
+    <style>
+      .comment-write > :nth-of-type(1) {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul id="comment">
+        <li class="comment-form">
+          <form
+            id="commentFrm"
+            method="post"
+            action="/comment/update/{{comment.id}}"
+          >
+            <h4>
+              댓글수정
+              <span></span>
+            </h4>
+            <span class="comment-write">
+              <input name="user_id" value="{{ comment.user_id }}" />
+              <input
+                placeholder="댓글 내용을 입력해주세요."
+                name="content"
+                value="{{ comment.content }}"
+              />
+            </span>
+            <input type="submit" class="write-button" value="수정" />
+          </form>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
