@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>댓글 목록 구현</title>
-    <link href="/css/index.css" rel="stylesheet" />
+    <link href="/css/views.css" rel="stylesheet" />
   </head>
   <body>
     <div>
@@ -27,7 +27,7 @@
           </form>
         </li>
         <li>
-          {% for item in commentList %}
+          {% for item in boardList %}
           <div class="comment-row-list">
             <div>{{ item.user_id }}</div>
             <div class="comment-content">

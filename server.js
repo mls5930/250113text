@@ -9,9 +9,9 @@ nunjucks.configure("views", {
     express: app
 })
 app.use(express.urlencoded({extended: true}));
-app.use (express.static("views"));
+app.use(express.static("public"));
 
-app.use (comment)
+app.use(comment)
 
 app.listen(3000,()=>{
     console.log("서버가 열리는지 확인");

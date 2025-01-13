@@ -4,11 +4,9 @@ const comments = require('../controllers/controllers')
 
 
 router.get('/list',comments.getdatalist)
-
-router.post('/write',comments.postdatwrite)
-
+router.get('/update/:id',comments.getUpdate)
+router.post('/write',comments.postdatawrite)
 router.post('/update/:id',comments.postUpdate)
-
 router.post('/delete/:id',comments.postslice)
 
 

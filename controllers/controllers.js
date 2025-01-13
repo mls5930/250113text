@@ -6,30 +6,37 @@ const getdatalist = async (req,res)=>{
         boardList
     })
 }
+const getUpdate = async (req,res)=>{
+    const id = parseInt(req.params.id)
+    const [comment] = await commetrepository.dateview(id)
+    console.log(comment);
+    res.render('write.html',{
+        comment
+    })
 
-const postdatwrite =async (req,res)=>{
-    console.log(req.body);
-    
-    const {insertId} = await commetrepository.datawrite(req.body)
-    
-    res.redirect('/list')
+}
+const postdatawrite =async (req,res)=>{
+   
+    await commetrepository.datawrite(req.body)
+    res.redirect('/comment/list')
 }
 
 const postUpdate = async (req,res)=>{
     const id = parseInt(req.params.id)
-    await commetrepository.dataupdate(id)
-    res.render('write.html')
+    await commetrepository.dataupdate(id,req.body)
+    res.redirect('/comment/list')
 }
 
 const postslice = async (req,res)=>{
     const id = parseInt(req.params.id)
     await commetrepository.dataslice(id)
-    res.redirect('/list')
+    res.redirect('/comment/list')
 }
 
 module.exports={
     getdatalist,
-    postdatwrite,
+    postdatawrite,
     postUpdate,
-    postslice
+    postslice,
+    getUpdate
 }

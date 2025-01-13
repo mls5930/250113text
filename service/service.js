@@ -5,19 +5,19 @@ const datalist = async() => {
     return result
 }
 const dateview = async(id) => {
-    const [result] = await commetrepository.dateview(id)
+    const result = await commetrepository.dateview(id)
     return result
 }
 const datawrite = async(data) => {
-    const [result] = await commetrepository.datawrite(data)
+    const result = await commetrepository.datawrite(data)
     return result
 }
 const dataslice = async(id) => {
     const result = await commetrepository.dataslice(id)
     return result
 }
-const dataupdate = async(data) => {
-    const result = await commetrepository.dataupdate(data)
+const dataupdate = async(id,data) => {
+    const result = await commetrepository.dataupdate(id,data)
     return result
 }
 
