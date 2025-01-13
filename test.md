@@ -13,6 +13,16 @@
    - 댓글을 구분할 수 있는 고유 식별 키입니다.  
    - 숫자 형식(`INT`)으로 설정하고, **자동 증가**되도록 만드세요.  
 
+```sql
+create table comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(30) NOT NULL,
+    content TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
 2. **user_id**  
 
    - 댓글 작성자의 사용자 ID를 저장합니다.  
@@ -48,7 +58,7 @@
    
 7. 댓글 생성이 잘 구현했는가? (10점)
 
-- 댓글을 작성할 때, user_id는 값을 동적인 값이 아닌, 동적값 입니다. ex => `wnqudgus1234`
+- 댓글을 작성할 때, user_id는 값을 동적인 값이 아닌, 정적값 입니다. ex => `wnqudgus1234`
 
 8. 댓글 조회를 잘 구현했는가? (10점)
 9. 댓글 수정을 잘 구현했는가? (10점)

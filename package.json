@@ -1,11 +1,11 @@
 {
   "name": "250113_test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "월별평가",
   "license": "ISC",
   "description": "",
   "dependencies": {
