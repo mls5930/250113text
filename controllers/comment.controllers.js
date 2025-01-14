@@ -6,7 +6,8 @@ const getdataList = async (req,res)=>{
         res.render('list.html',{
             boardList
     })
-    }catch{
+    }catch (error) {
+        console.log(error);
         res.status(404).send("리스트 페이지 조회를 실패였습니다.")
     }
 }
@@ -18,7 +19,7 @@ const getUpdate = async (req,res)=>{
         res.render('write.html',{
             comment
         })
-    }catch{
+    }catch (error) {
         res.status(404).send("업데이트 페이지 조회를 실패였습니다.")
     }
 }
