@@ -1,6 +1,5 @@
 const log = (req,res,next) => {
     const undefind = req.body.content
-    console.log(undefind);
     if (undefind !== ''){
         console.log("미들웨어 확인");
         next()
