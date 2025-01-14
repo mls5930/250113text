@@ -1,30 +1,30 @@
 const commetrepository = require('../repository/comments.repository')
 
-const datalist = async() => {
-    const result = await commetrepository.datalist()
+const dataList = async() => {
+    const result = await commetrepository.dataList()
     return result
 }
-const dateview = async(id) => {
-    const result = await commetrepository.dateview(id)
+const dateView = async(id) => {
+    const result = await commetrepository.dateView(id)
     return result
 }
-const datawrite = async(data) => {
-    const result = await commetrepository.datawrite(data)
+const dataWrite = async(data) => {
+    const result = await commetrepository.dataWrite(data)
     return result
 }
-const dataslice = async(id) => {
-    const result = await commetrepository.dataslice(id)
+const dataSlice = async(id) => {
+    const result = await commetrepository.dataSlice(id)
     return result
 }
-const dataupdate = async(id,data) => {
-    const result = await commetrepository.dataupdate(id,data)
+const dataUpdate = async(id,data) => {
+    const result = await commetrepository.dataUpdate(id,data)
     return result
 }
 
 module.exports= {
-    datalist,
-    dateview,
-    datawrite,
-    dataslice,
-    dataupdate
+    dataList,
+    dateView,
+    dataWrite,
+    dataSlice,
+    dataUpdate
 }
